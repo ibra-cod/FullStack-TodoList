@@ -9,10 +9,14 @@ const btnDashboard = document.getElementById('Dashboard')
 const ContainerTodo =  document.querySelector('.popTodoInfos')
 const divContainerTodo = document.querySelector('.containerTodo')
 
-
 // const deleteAllTodos = document.getElementById('deleteAllTodos')
 
 // get all the todos in the localstorage
+/**
+ * 
+ * @param {String} key 
+ * @returns {data[]}
+ */
 const getLocalStorageInfo = function (key) {
     const  data = JSON.parse(localStorage.getItem(key)) ?? [];
     if(localStorage) {
@@ -27,6 +31,9 @@ export const folders = getLocalStorageInfo('folders');
 
 
 // delete all the todo in the localstorage  
+/**
+ *  clear all the todos
+ */
 const clearAllTodo = function () {
     todos.splice(0, todos.length);
     localStorage.removeItem('todos');
@@ -35,6 +42,11 @@ const clearAllTodo = function () {
 
 
 // save to todo takes 2 parameters and set all the todo in the local storage
+/**
+ * 
+ * @param {string} key 
+ * @param {string} value 
+ */
 const saveTodos = function (key,value) {
     localStorage.setItem(key,value);
     getLocalStorageInfo(key);
@@ -43,9 +55,11 @@ const saveTodos = function (key,value) {
 // show todos display all the todos of the user
 // that are in the todos []
 
-
-
-
+/**
+ * 
+ * @param {array} folders 
+ * @param {string} folder_name_value 
+ */
 export const addFolders =  (folders, folder_name_value) => {
      folders.push({folderName: `${folder_name_value}`})
     saveTodos('folders', JSON.stringify(folders));
@@ -53,7 +67,11 @@ export const addFolders =  (folders, folder_name_value) => {
 
 // the AddTodo function add and the input value
 // in the constant todos[]
-
+/**
+ * 
+ * @param {array[]} folders 
+ * @param {array[]} todos 
+ */
 export const AddTodos = async (folders, todos) => {
     const title = document.getElementById('titleId').value.trim();
     const description = document.getElementById('message').value.trim()
@@ -85,7 +103,6 @@ export const AddTodos = async (folders, todos) => {
     } 
 
 }
-
   
 if (addTodoId !== null) 
     addTodoId.addEventListener('click', function () {
@@ -100,13 +117,10 @@ if (addTodoId !== null)
             e.preventDefault();
                  AddTodos(folders, todos);
          })
-    }
+}
     
     // deleteAllTodos.addEventListener('click', clearAllTodo)
     
-
-
-
 (async () => {
     const result = await getUserConnection('../App/Models/getUserConnection.php')
 
@@ -126,5 +140,5 @@ if (addTodoId !== null)
 btnDashboard.addEventListener('click', () => {
     asideElement.classList.toggle('asideTransition')
 })
-    
+
 

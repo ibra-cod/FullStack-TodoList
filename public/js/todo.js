@@ -2,6 +2,12 @@
 import {addFolders, todos} from "./main.js";
 import { getUserTodos, getUserConnection, getFolders } from "./requests/requests.js";
 
+/**
+ * 
+ * @param {Array} folders 
+ * @param {string} folder_name_value 
+ */
+
 export const doTheFolderAlreadyExist = (folders, folder_name_value) => {
     const doFolderExist = folders.filter(category => category.folderName.toLowerCase() === folder_name_value)
     if (doFolderExist == false) {
@@ -9,7 +15,11 @@ export const doTheFolderAlreadyExist = (folders, folder_name_value) => {
     }
 }
 
-
+/**
+ * 
+ * @param {String[]} todos 
+ * @param {String[]} folders 
+ */
 export const  showFolders  = async (todos , folders) => {
     const boardContainer = document.querySelector('.boardContainer')
     const pFolder = document.querySelectorAll('.folders')
@@ -56,7 +66,12 @@ export const  showFolders  = async (todos , folders) => {
 }
 
 
-
+/**
+ * 
+ * @param {String[]} todos 
+ * @param {Array} todosOfTheSelectedCateory 
+ * @param {Array} results 
+ */
 export const showNotesOfFolderSelected  = (todos,todosOfTheSelectedCateory, results) => {
 
     const containerTodo = document.querySelector('.containerTodo')
@@ -118,14 +133,24 @@ export const showNotesOfFolderSelected  = (todos,todosOfTheSelectedCateory, resu
 
 }
 
-
+/**
+ * 
+ * @param {String[]} todos 
+ * @param {String} categoryName 
+ * @param {Array} results 
+ */
 const getCategoryTodos = (todos, categoryName, results) => {
     const todosOfTheSelectedCateory = todos.filter(item => item.folderName == categoryName)
     showNotesOfFolderSelected(todos,todosOfTheSelectedCateory, results);
 }
 
 
-
+/**
+ * 
+ * @param {Array} todos 
+ *  @param {String[]} todos 
+ * @returns 
+ */
 export const verifyPopUpinfo =  (todos, text) => {
 
     return new Promise((resolve, reject) => {
@@ -139,6 +164,12 @@ export const verifyPopUpinfo =  (todos, text) => {
     })
 } 
 
+
+/**
+ * 
+ * @param {Array} todos 
+ * @param {String} text 
+ */
 export const showpopUpTodoInfos =  async (todos, text) => {
     const popTodoDivInfos = document.querySelector('.popTodoInfos')
     popTodoDivInfos.classList.toggle('pupTodoInfosVisible')
@@ -149,19 +180,30 @@ export const showpopUpTodoInfos =  async (todos, text) => {
 
 
     for (const req of request) {
+        console.log(req);
         h3PopUp.innerText = req.name
         description.innerText = req.description
         SubstackContainer.innerHTML =
         `
             <div class="Substack">
-            <label> <input type="checkbox" id="vehicle2" name="vehicle2" value="Car" placeholder="value"> </label>
-                <p> ${req.substack}</p>
+            <label> ${req.substack} <input type="checkbox" id="vehicle2" name="vehicle2" value="Car" placeholder="value" value=""> </label>
+                <p> </p>
                 
             </div>
 
         `
     }
 }
+
+/**
+ * 
+ * @param {String} title 
+ * @param {String} description 
+ * @param {String} folderName 
+ * @param {String} substack 
+ * @param {String[]} todos 
+ * @returns 
+ */
 
 export const VerifyAddTodoInformation = (title,description,folderName,substack, todos) =>  {
 

@@ -25,7 +25,7 @@ if (is_post()) {
             $lastId = $pdo->lastInsertId(); 
 
             $request = $pdo->prepare("INSERT INTO folders(foldername, userID, todoID) VALUES(?, ?, ? )");
-            $request->bindValue(1,$d["folderName"] , PDO::PARAM_INT);
+            $request->bindValue(1,$d["folderName"] , PDO::PARAM_STR);
             $request->bindValue(2, $_SESSION['user']['id'] , PDO::PARAM_INT);
             $request->bindValue(3, $lastId , PDO::PARAM_INT);
         

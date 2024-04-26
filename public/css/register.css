@@ -1,0 +1,36 @@
+@import url(./todoCss.css);
+
+.inputRegister {
+
+    border: 1px #0000 solid;
+}
+
+.registerSectionContainer {
+    width: 100%;
+    max-width: 11440px;
+    /* background-color: black; */
+    color: #FFF;
+    padding: 5rem;
+    height: 85vh;
+
+}
+
+.RegisterContainer {
+    max-width: 800px;
+    background-image: linear-gradient(30deg,#6c2eb9 0%,#a0f 100%);
+    margin: 0 auto;
+    margin-top: 2rem;
+    padding: 2rem;
+}
+
+.inputRegister {
+    width: 100%;
+    padding: 0.5rem 0.9rem;
+    outline: none;
+    border-radius: 0.5rem;
+}
+
+.formDiv {
+    margin-top: 5rem;
+
+}

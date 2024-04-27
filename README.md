@@ -9,7 +9,7 @@
   
 ## what is the goal ?
 
-  * The goal is to improve it and full and complete website with REACT, add a sharing system, create a MVC ...
+  * The goal is to improve it and make it a full and complete website with REACT, add a sharing system, create a MVC ...
 
 
 ## CONTACT ?

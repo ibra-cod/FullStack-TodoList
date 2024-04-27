@@ -23,7 +23,7 @@ export const flashMessages = function (message, cssTag, timer = 2000) {
 /**
  * 
  * @param {INT} idParam 
- * @returns {INT}
+ * @returns {MIXED}
  */
 export const  createRandomId = (idParam) => {
     const randomNumber = Math.floor(Math.random() * 1000)

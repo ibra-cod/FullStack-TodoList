@@ -20,8 +20,8 @@
         <nav class="nav-header">
             <a href="#">notifyy</a>
            <div>
-                <?php if ( isset($_SESSION['users']) && !empty($_SESSION['users'])) : ?>
-                    <button type="button" class="signIn">Log Out</button>
+                <?php if ( isset($_SESSION['user']) || !empty($_SESSION['users'])) : ?>
+                    <button type="button" class="signIn"><a href="../App/helpers/sessionDestroy.php">Log Out</a></button>
                 <?php else : ?>
                     <button type="button" class="signIn"><a href="./register.php">sign In</a></button>
                 <?php endif ?> 

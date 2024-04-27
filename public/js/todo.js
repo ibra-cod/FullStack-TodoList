@@ -172,27 +172,64 @@ export const verifyPopUpinfo =  (todos, text) => {
  */
 export const showpopUpTodoInfos =  async (todos, text) => {
     const popTodoDivInfos = document.querySelector('.popTodoInfos')
-    popTodoDivInfos.classList.toggle('pupTodoInfosVisible')
-    const request = await verifyPopUpinfo(todos, text)
     const h3PopUp = document.querySelector('.h3PopUp')
     const description = document.querySelector('.description')
     const SubstackContainer = document.querySelector('.SubstackContainer')
 
+    popTodoDivInfos.classList.toggle('pupTodoInfosVisible')
 
-    for (const req of request) {
-        console.log(req);
-        h3PopUp.innerText = req.name
-        description.innerText = req.description
-        SubstackContainer.innerHTML =
-        `
-            <div class="Substack">
-            <label> ${req.substack} <input type="checkbox" id="vehicle2" name="vehicle2" value="Car" placeholder="value" value=""> </label>
-                <p> </p>
+    // const request = await verifyPopUpinfo(todos, text)
+
+    const userConnection = await getUserConnection('../App/Models/getUserConnection.php');
+
+    if (userConnection === false) {
+        for (const req of request) {
+            h3PopUp.innerText = req.name
+            description.innerText = req.description
+            SubstackContainer.innerHTML =
+            `
+                <div class="Substack">
+                <label> ${req.substack} <input type="checkbox" id="vehicle2" name="vehicle2" value="Car" placeholder="value" value=""> </label>
+                    <p> </p>
+                    
+                </div>
+    
+            `
+        }
+    } else {
+        const results = await getUserTodos('../App/Models/getUserTodos.php');
+
+        for (const value of results) {
+            h3PopUp.innerText = value.todoName
+            description.innerText = value.todoDescription
+            popTodoDivInfos.innerHTML =
+            `
+                    <div class="infoTop">
+                    <div class="divH3">
+                        <h3 class="h3PopUp">All my todos</h3></div>
+                    <div>
+                        <span>&#9776;</span>
+                    </div>
+                </div>
+
+                <div class="spanContainer">
+                    <p class="description">description</p>
+                </div>
+                <div class="SubstackContainer">
                 
-            </div>
+                </div>
+    
+            `
+        }
 
-        `
+        console.log(results);
+
+
     }
+
+
+
+    
 }
 
 /**

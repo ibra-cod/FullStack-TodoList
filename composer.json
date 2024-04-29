@@ -1,0 +1,17 @@
+{
+    "name": "ibrahim/todo-list",
+    "authors": [
+        {
+            "name": "Ibrahim SOMA",
+            "email": "ibrahim.soma@hetic.net"
+        }
+    ],
+    "require": {},
+
+    "autoload": {
+        "psr-4" : {
+            "App\\Database\\" : "App/Database/",
+            "App\\Models\\" : "App/Models/"
+        }
+    }
+}

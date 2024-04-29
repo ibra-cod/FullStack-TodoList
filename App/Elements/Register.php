@@ -4,7 +4,7 @@ require '../database/Database.php';
 
 require '../../public/bootstrap.php';
 
-$pdo = getPDO();
+
 
        if(is_post()) {
         if (isset($_POST['submit'])) {

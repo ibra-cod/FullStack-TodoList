@@ -1,11 +1,17 @@
 <?php 
 require '../App/includes/header.php'; 
+require '../vendor/autoload.php';
+
+
+
+
 // require '../App/database/Database.php'; 
 if (is_connected()) {
     header('Location: index.php');
     dd($_COOKIE['connection']);
 }
 
+// dd(Database::getPDO())
 
 ?>
 
@@ -32,3 +38,5 @@ if (is_connected()) {
 </section>
 
 <?php require '../App/includes/footer.php'; ?>
+
+use App\Database\Database;

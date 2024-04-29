@@ -1,13 +1,13 @@
 <?php 
 session_start();
 
-require '../database/Database.php';
+require '../Database/getDatabase.php';
 require '../../public/bootstrap.php';
 
 
-function getUserTodos () {
-    $sql = getPDO()->prepare("SELECT `folderName` FROM `folders`");
-    $sql->execute();
+function getUserTodos ($userId) {
+    $sql = getPDO()->prepare("SELECT `folderName` FROM `folders` WHERE userID = ?");
+    $sql->execute([$userId]);
     $result = $sql->fetchAll(PDO::FETCH_ASSOC);
     
     return $result;

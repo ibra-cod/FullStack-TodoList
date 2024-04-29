@@ -1,8 +1,10 @@
 <?php
+
 require '../database/Database.php';
 require '../../public/bootstrap.php';
 
-$pdo = getPDO();
+use App\Database\Database;
+
 if(is_post()) {
     if (isset($_POST['submit'])) {
         $email = is_valid($_POST['email']);

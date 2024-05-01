@@ -1,3 +1,4 @@
+<?php require '../App/includes/header.php'; ?>
 
     <div id="popUpId" class="popUp">
         <h3>Add New Task</h3>

@@ -1,6 +1,10 @@
 <?php 
 require '../App/includes/header.php'; 
 
+<<<<<<< HEAD:public/login.php
+=======
+// require '../App/database/Database.php'; 
+>>>>>>> ef0ecb571e40f0b577b382b19d2933f27432b7de:public/login.php
 if (is_connected()) {
     header('Location: index.php');
     dd($_COOKIE['connection']);

@@ -1,9 +1,7 @@
 <?php
+require_once '../../public/bootstrap.php';
+require '../database/getDatabase.php';
 
-require '../database/Database.php';
-require '../../public/bootstrap.php';
-
-use App\Database\Database;
 
 if(is_post()) {
     if (isset($_POST['submit'])) {

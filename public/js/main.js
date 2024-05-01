@@ -124,8 +124,6 @@ if (addTodoId !== null)
 (async () => {
     const result = await getUserConnection('../App/Models/getUserConnection.php')
 
-    console.log(result);
-
   if (result === false) {
         folders.length > 0 > 0 ? showFolders(todos,folders) : document.querySelector('.boardContainer').innerText = 'No folder Availaible';
         todos.length > 0 ? showTodos() : divContainerTodo.innerText = 'You have todo available add one in the LocalSorage or sign in !';

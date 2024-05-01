@@ -1,7 +1,7 @@
 <?php 
 session_start();
 
-require '../database/Database.php';
+require '../Database/getDatabase.php';
 require '../../public/bootstrap.php';
 
 

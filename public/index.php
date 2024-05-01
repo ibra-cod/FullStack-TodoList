@@ -1,16 +1,27 @@
- <?php 
+ <?php
+
+require '../public/bootstrap.php';
+
+use App\Router\Router;
+use App\Exception\RouteNotFoundexception;
+
 require '../vendor/autoload.php';
 // require '../App/includes/header.php';
 
-$router = new router();
+$router = new Router();
 
-$router->register('/' , function() {
-    return 'HomePage';
-});
+$router->register('/' , ['Controllers\HomeController', 'index']);
 
-$router->register('/' , function() {
-    return 'Contact Page';
-});
+
+// dd();
+try {
+    echo $router->resolve($_SERVER['REQUEST_URI']);
+} catch (RouteNotFoundexception $th) {
+    echo $th->getMessage();
+}
+
+
+
 
 
 ; ?>

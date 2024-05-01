@@ -1,17 +1,10 @@
 <?php 
 require '../App/includes/header.php'; 
-require '../vendor/autoload.php';
 
-
-
-
-// require '../App/database/Database.php'; 
 if (is_connected()) {
     header('Location: index.php');
     dd($_COOKIE['connection']);
 }
-
-// dd(Database::getPDO())
 
 ?>
 

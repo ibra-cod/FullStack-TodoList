@@ -175,7 +175,6 @@ export const showpopUpTodoInfos =  async (todos, text) => {
     const h3PopUp = document.querySelector('.h3PopUp')
     const description = document.querySelector('.description')
     const SubstackContainer = document.querySelector('.SubstackContainer')
-
     popTodoDivInfos.classList.toggle('pupTodoInfosVisible')
 
     // const request = await verifyPopUpinfo(todos, text)

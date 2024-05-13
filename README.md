@@ -1,5 +1,5 @@
 # TODOLIST IN JS/PHP
-  * I create this todo list app for learning purse
+  * I create this todo list app for learning purpose
 
 
 ## WHAT DID I DO ?
